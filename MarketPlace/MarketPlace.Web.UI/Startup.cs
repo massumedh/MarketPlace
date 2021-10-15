@@ -1,6 +1,12 @@
+using MarketPlace.DAL.EF.Context;
+using MarketPlace.Domain.Services.Repository.Implementation;
+using MarketPlace.Domain.Services.Repository.Interfaces;
+using MarketPlace.Domain.Services.Services.Implementation;
+using MarketPlace.Domain.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +30,15 @@ namespace MarketPlace.Web.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            #region config database
+            services.AddDbContext<MarketPlaceDbContext>(options => options.UseSqlServer(
+                Configuration.GetConnectionString("MarketPlaceConnection")));
+            #endregion
+            #region config service
+            services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
+            services.AddScoped<IUserService,UserService>();
+            services.AddScoped<IPasswordHelper,PasswordHelper>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

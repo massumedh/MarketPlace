@@ -1519,6 +1519,35 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "MarketPlace.DAL.EF/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MarketPlace.Domain.Entites": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11"
+        },
+        "compile": {
+          "bin/placeholder/MarketPlace.DAL.EF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MarketPlace.DAL.EF.dll": {}
+        }
+      },
+      "MarketPlace.Domain.Entites/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11"
+        },
+        "compile": {
+          "bin/placeholder/MarketPlace.Domain.Entites.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MarketPlace.Domain.Entites.dll": {}
+        }
       }
     }
   },
@@ -5787,10 +5816,22 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "MarketPlace.DAL.EF/1.0.0": {
+      "type": "project",
+      "path": "../MarketPlace.DAL.EF/MarketPlace.DAL.EF.csproj",
+      "msbuildProject": "../MarketPlace.DAL.EF/MarketPlace.DAL.EF.csproj"
+    },
+    "MarketPlace.Domain.Entites/1.0.0": {
+      "type": "project",
+      "path": "../MarketPlace.Domain.Entites/MarketPlace.Domain.Entites.csproj",
+      "msbuildProject": "../MarketPlace.Domain.Entites/MarketPlace.Domain.Entites.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MarketPlace.DAL.EF >= 1.0.0",
+      "MarketPlace.Domain.Entites >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
@@ -5828,7 +5869,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\MarketPlace\\MarketPlace\\MarketPlace.DAL.EF\\MarketPlace.DAL.EF.csproj": {
+              "projectPath": "D:\\MarketPlace\\MarketPlace\\MarketPlace.DAL.EF\\MarketPlace.DAL.EF.csproj"
+            },
+            "D:\\MarketPlace\\MarketPlace\\MarketPlace.Domain.Entites\\MarketPlace.Domain.Entites.csproj": {
+              "projectPath": "D:\\MarketPlace\\MarketPlace\\MarketPlace.Domain.Entites\\MarketPlace.Domain.Entites.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

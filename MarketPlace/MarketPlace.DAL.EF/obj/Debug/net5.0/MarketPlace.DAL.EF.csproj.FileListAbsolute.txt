@@ -1,0 +1,17 @@
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\MarketPlace.DAL.EF.deps.json
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\MarketPlace.DAL.EF.runtimeconfig.json
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\MarketPlace.DAL.EF.runtimeconfig.dev.json
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\MarketPlace.DAL.EF.dll
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\ref\MarketPlace.DAL.EF.dll
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\MarketPlace.DAL.EF.pdb
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\MarketPlace.Domain.Entites.dll
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\bin\Debug\net5.0\MarketPlace.Domain.Entites.pdb
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.csproj.AssemblyReference.cache
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.GeneratedMSBuildEditorConfig.editorconfig
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.AssemblyInfoInputs.cache
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.AssemblyInfo.cs
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.csproj.CoreCompileInputs.cache
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.dll
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\ref\MarketPlace.DAL.EF.dll
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.pdb
+D:\MarketPlace\MarketPlace\MarketPlace.DAL.EF\obj\Debug\net5.0\MarketPlace.DAL.EF.genruntimeconfig.cache

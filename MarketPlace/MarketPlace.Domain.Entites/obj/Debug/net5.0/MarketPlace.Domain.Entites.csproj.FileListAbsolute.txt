@@ -1,0 +1,15 @@
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\bin\Debug\net5.0\MarketPlace.Domain.Entites.deps.json
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\bin\Debug\net5.0\MarketPlace.Domain.Entites.runtimeconfig.json
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\bin\Debug\net5.0\MarketPlace.Domain.Entites.runtimeconfig.dev.json
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\bin\Debug\net5.0\MarketPlace.Domain.Entites.dll
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\bin\Debug\net5.0\ref\MarketPlace.Domain.Entites.dll
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\bin\Debug\net5.0\MarketPlace.Domain.Entites.pdb
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.csproj.AssemblyReference.cache
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.GeneratedMSBuildEditorConfig.editorconfig
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.AssemblyInfoInputs.cache
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.AssemblyInfo.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.csproj.CoreCompileInputs.cache
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.dll
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\ref\MarketPlace.Domain.Entites.dll
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.pdb
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Entites\obj\Debug\net5.0\MarketPlace.Domain.Entites.genruntimeconfig.cache
