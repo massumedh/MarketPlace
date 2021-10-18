@@ -33,8 +33,15 @@ using MarketPlace.Domain.Services.DTOs.Account;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Services.DTOs.Site;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"16dc915a48ce2a7edbfbe1524d4b4aa6079b7407", @"/Views/Shared/Components/SiteFooter/SiteFooter.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fadce5dafb3293b7f03909549129b7f9d0cb49ae", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4211dd8e309b9d81146bf514fe3cc6495be251d4", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_SiteFooter_SiteFooter : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("mc-form"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -139,7 +146,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
                         <div class=""subscribe_form"">
                             <h3>هم اکنون عضو خبرنامه ما شوید</h3>
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740710200", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740710398", async() => {
                 WriteLiteral("\r\n                                <input id=\"mc-email\" type=\"email\" autocomplete=\"off\" placeholder=\"... آدرس ایمیل شما\" dir=\"ltr\">\r\n                                <button id=\"mc-submit\">اشتراک!</button>\r\n                            ");
             }
             );
@@ -288,7 +295,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
                                         <h2>اندازه</h2>
                                         <select class=""select_option"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740719881", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740720079", async() => {
                 WriteLiteral("کوچک");
             }
             );
@@ -307,7 +314,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740721394", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740721592", async() => {
                 WriteLiteral("متوسط");
             }
             );
@@ -323,7 +330,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740722597", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740722795", async() => {
                 WriteLiteral("بزرگ");
             }
             );
@@ -345,7 +352,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
                                         <h2>رنگ</h2>
                                         <select class=""select_option"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740724089", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740724287", async() => {
                 WriteLiteral("بنفش");
             }
             );
@@ -364,7 +371,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740725602", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740725800", async() => {
                 WriteLiteral("قرمز");
             }
             );
@@ -380,7 +387,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740726804", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740727002", async() => {
                 WriteLiteral("مشکی");
             }
             );
@@ -396,7 +403,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740728006", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740728204", async() => {
                 WriteLiteral("صورتی");
             }
             );
@@ -412,7 +419,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740729209", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740729407", async() => {
                 WriteLiteral("نارنجی");
             }
             );
@@ -428,7 +435,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        </select>\r\n                                    </div>\r\n                                    <div class=\"modal_add_to_cart\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740730581", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740730779", async() => {
                 WriteLiteral("\r\n                                            <input min=\"0\" max=\"100\" step=\"2\" value=\"1\" type=\"number\">\r\n                                            <button type=\"submit\">افزودن به سبد</button>\r\n                                        ");
             }
             );
@@ -482,7 +489,7 @@ using MarketPlace.Domain.Services.DTOs.Account;
                     <label class=""newletter-label"">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</label>
                     <div id=""frm_subscribe"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740734090", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dc915a48ce2a7edbfbe1524d4b4aa6079b740734288", async() => {
                 WriteLiteral("\r\n                            <input type=\"text\"");
                 BeginWriteAttribute("value", " value=\"", 13800, "\"", 13808, 0);
                 EndWriteAttribute();

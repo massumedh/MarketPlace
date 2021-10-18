@@ -1,4 +1,5 @@
-﻿using MarketPlace.Domain.Services.DTOs;
+﻿using GoogleReCaptcha.V3.Interface;
+using MarketPlace.Domain.Services.DTOs;
 using MarketPlace.Domain.Services.DTOs.Account;
 using MarketPlace.Domain.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication;
@@ -16,9 +17,12 @@ namespace MarketPlace.Web.UI.Controllers
     {
         #region constructor
         private readonly IUserService _userService;
-        public AccountController(IUserService userService)
+        private readonly ICaptchaValidator _captchaValidator;
+
+        public AccountController(IUserService userService,ICaptchaValidator captchaValidator)
         {
             _userService = userService;
+            _captchaValidator = captchaValidator;
         }
         #endregion
         #region register
@@ -32,6 +36,11 @@ namespace MarketPlace.Web.UI.Controllers
         [HttpPost("register"),ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterUserDTO register)
         {
+            if (!await _captchaValidator.IsCaptchaPassedAsync(register.Captcha))
+            {
+                TempData[ErrorMessage] = "کد کپچای شما تایید نشد";
+                return View(register);
+            }
             if (ModelState.IsValid)
             {
                 var result = await _userService.RegisterUser(register);
@@ -61,6 +70,12 @@ namespace MarketPlace.Web.UI.Controllers
         [HttpPost("login"),ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginUserDTO login)
         {
+            if (!await _captchaValidator.IsCaptchaPassedAsync(login.Captcha))
+            {
+                TempData[ErrorMessage] = "کد کپچای شما تایید نشد";
+                return View(login);
+            }
+
             if (ModelState.IsValid)
             {
                 var result = await _userService.GetUserForLogin(login);
@@ -92,6 +107,21 @@ namespace MarketPlace.Web.UI.Controllers
             }
             return View(login);
 
+        }
+        #endregion
+        #region forgot password
+        [HttpGet("forgot-pass")]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+        #endregion
+        #region logout
+        [HttpGet("log-out")]
+        public async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
         }
         #endregion
     }

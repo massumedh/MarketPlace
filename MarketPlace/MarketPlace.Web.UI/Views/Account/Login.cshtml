@@ -1,4 +1,5 @@
-﻿@model LoginUserDTO
+﻿@using MarketPlace.Domain.Services.DTOs.Site
+@model LoginUserDTO
 
 @{
     ViewData["Title"] = "ورود به حساب کاربری";
@@ -7,6 +8,7 @@
 @section scripts
 {
     <partial name="_JqueryValidators" />
+    <partial name="_CaptchaScripts" />
 }
 
 <div class="breadcrumbs_area">
@@ -32,6 +34,7 @@
                 <div class="account_form register">
                     <h2>لاگین</h2>
                     <form asp-controller="Account" asp-action="Login" method="post">
+                        <partial name="_CaptchaInput" />
                         <p>
                             <label>تلفن همراه<span>*</span></label>
                             <input type="text" asp-for="Mobile">
@@ -52,5 +55,3 @@
         </div>
     </div>
 </div>
-
-

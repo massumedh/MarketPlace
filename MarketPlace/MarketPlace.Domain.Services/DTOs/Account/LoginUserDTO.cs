@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarketPlace.Domain.Services.DTOs.Site;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MarketPlace.Domain.Services.DTOs.Account
 {
-    public class LoginUserDTO
+    public class LoginUserDTO : CaptchaDTO
     {
         [Display(Name = "تلفن همراه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]

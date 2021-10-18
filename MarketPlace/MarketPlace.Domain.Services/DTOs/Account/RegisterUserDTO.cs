@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarketPlace.Domain.Services.DTOs.Site;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MarketPlace.Domain.Services.DTOs
 {
-    public class RegisterUserDTO
+    public class RegisterUserDTO : CaptchaDTO
     {
         #region properties
         [Display(Name = "تلفن همراه")]
