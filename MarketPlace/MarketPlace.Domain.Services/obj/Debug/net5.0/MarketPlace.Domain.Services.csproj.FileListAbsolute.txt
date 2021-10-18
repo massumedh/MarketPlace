@@ -13,7 +13,6 @@ D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPl
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.AssemblyInfoInputs.cache
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.AssemblyInfo.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.csproj.CoreCompileInputs.cache
-D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.csproj.CopyComplete
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.dll
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\ref\MarketPlace.Domain.Services.dll
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.pdb

@@ -3,17 +3,16 @@ using MarketPlace.Domain.Services.Repository.Implementation;
 using MarketPlace.Domain.Services.Repository.Interfaces;
 using MarketPlace.Domain.Services.Services.Implementation;
 using MarketPlace.Domain.Services.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace MarketPlace.Web.UI
 {
@@ -39,6 +38,25 @@ namespace MarketPlace.Web.UI
             services.AddScoped<IUserService,UserService>();
             services.AddScoped<IPasswordHelper,PasswordHelper>();
             #endregion
+            #region authentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(options =>
+            {
+                options.LoginPath = "/login";
+                options.LogoutPath = "/log-out";
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
+            });
+            #endregion
+            #region html encoder
+
+            services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin, UnicodeRanges.Arabic }));
+
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +76,7 @@ namespace MarketPlace.Web.UI
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

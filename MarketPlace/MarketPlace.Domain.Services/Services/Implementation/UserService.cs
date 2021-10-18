@@ -1,5 +1,6 @@
 ﻿using MarketPlace.Domain.Entites.Account;
 using MarketPlace.Domain.Services.DTOs;
+using MarketPlace.Domain.Services.DTOs.Account;
 using MarketPlace.Domain.Services.Repository.Interfaces;
 using MarketPlace.Domain.Services.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -49,9 +50,23 @@ namespace MarketPlace.Domain.Services.Services.Implementation
                 };
                 await _userRepository.AddEntity(user);
                 await _userRepository.SaveChanges();
+                //todo : send activation mobile code to user
                 return RegisterUserResult.Success;
             }
             return RegisterUserResult.MobileExists;
+        }
+        public async Task<LoginUserResult> GetUserForLogin(LoginUserDTO login)
+        {
+            var user = await _userRepository.GetQuery().AsQueryable().SingleOrDefaultAsync(a => a.Mobile == login.Mobile);
+            if (user == null) return LoginUserResult.NotFound;
+            if (!user.IsMobileActive) return LoginUserResult.NotActivated;
+            if (user.Password != _passwordHelper.EncodePasswordMd5(login.Password)) return LoginUserResult.NotFound;
+            return LoginUserResult.Success;
+        }
+
+        public async Task<User> GetUserByMobile(string mobile)
+        {
+            return await _userRepository.GetQuery().AsQueryable().SingleOrDefaultAsync(a => a.Mobile == mobile);
         }
     }
 }
