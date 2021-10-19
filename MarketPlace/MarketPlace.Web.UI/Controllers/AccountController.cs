@@ -109,13 +109,41 @@ namespace MarketPlace.Web.UI.Controllers
 
         }
         #endregion
+
         #region forgot password
         [HttpGet("forgot-pass")]
         public IActionResult ForgotPassword()
         {
             return View();
         }
+        [HttpPost("forgot-pass"),ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordDTO forgot)
+        {
+            if (!await _captchaValidator.IsCaptchaPassedAsync(forgot.Captcha))
+            {
+                TempData[ErrorMessage] = "کد کپچای شما تایید نشد";
+                return View(forgot);
+            }
+            if (ModelState.IsValid)
+            {
+                var result = await _userService.RecoverUserPassword(forgot);
+                switch (result)
+                {                   
+                    case ForgotPasswordResult.NotFound:
+                        TempData[ErrorMessage] = "کاربر مورد نظر یافت نشد";
+                        break;                
+                    case ForgotPasswordResult.Success:
+                        TempData[SuccessMessage] = "کلمه عبور جدید برای شما ارسال شد";
+                        TempData[InfoMessage] = "لطفا پس از ورود به حساب کاربری،کلمه عبور خود را تغییر دهید";
+                        return RedirectToAction("Login");
+                  
+                }
+            }
+            return View(forgot);
+        }
+
         #endregion
+
         #region logout
         [HttpGet("log-out")]
         public async Task<IActionResult> LogOut()
