@@ -1,4 +1,5 @@
 ﻿using MarketPlace.Domain.Entites.Account;
+using MarketPlace.Domain.Entites.Site;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -11,6 +12,7 @@ namespace MarketPlace.DAL.EF.Context
         }
         #region dbset
         public DbSet<User> Users { get; set; }
+        public DbSet<SiteSetting> SiteSettings { get; set; }
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

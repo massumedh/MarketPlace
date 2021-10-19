@@ -38,6 +38,7 @@ namespace MarketPlace.Web.UI
             #region config service
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddScoped<IUserService,UserService>();
+            services.AddScoped<ISiteService, SiteService>();
             services.AddScoped<IPasswordHelper,PasswordHelper>();
             services.AddHttpClient<ICaptchaValidator,GoogleReCaptchaValidator>();
             #endregion
