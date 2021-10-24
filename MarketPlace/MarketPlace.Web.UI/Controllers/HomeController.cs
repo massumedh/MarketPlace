@@ -1,4 +1,5 @@
 ﻿using GoogleReCaptcha.V3.Interface;
+using MarketPlace.Domain.Entites.Site;
 using MarketPlace.Domain.Services.DTOs.Contacts;
 using MarketPlace.Domain.Services.PresentationExtensions;
 using MarketPlace.Domain.Services.Services.Interfaces;
@@ -18,17 +19,30 @@ namespace MarketPlace.Web.UI.Controllers
         #region constructor
         private readonly IContactService _contactService;
         private readonly ICaptchaValidator _captchaValidator;
+        private readonly ISiteService _siteService;
 
-        public HomeController(IContactService contactService,ICaptchaValidator captchaValidator)
+        public HomeController
+            (
+            IContactService contactService,
+            ICaptchaValidator captchaValidator,
+            ISiteService siteService
+            )
         {
             _contactService = contactService;
             _captchaValidator = captchaValidator;
+            _siteService = siteService;
         }
         #endregion
 
         #region Index
         public async Task<IActionResult> Index()
         {
+            ViewBag.banners = await _siteService.GetSiteBannerByPlacement(new List<BannerPlacement>
+            {
+                BannerPlacement.Home_1,
+                BannerPlacement.Home_2,
+                BannerPlacement.Home_3
+            });
             return View();
         }
         #endregion
@@ -54,6 +68,15 @@ namespace MarketPlace.Web.UI.Controllers
                 return RedirectToAction("ContactUs");
             }
             return View(contact);
+        }
+        #endregion
+
+        #region about us
+        [HttpGet("about-us")]
+        public async Task<IActionResult> AboutUs()
+        {
+            var siteSetting = await _siteService.GetDefaultSiteSetting();
+            return View(siteSetting);
         }
         #endregion
 

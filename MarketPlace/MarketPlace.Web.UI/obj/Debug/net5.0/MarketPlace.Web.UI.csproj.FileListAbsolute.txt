@@ -161,3 +161,4 @@ D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Share
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Shared\_CaptchaInput.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Shared\Components\HomeSlider\HomeSlider.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Home\AboutUs.cshtml.g.cs

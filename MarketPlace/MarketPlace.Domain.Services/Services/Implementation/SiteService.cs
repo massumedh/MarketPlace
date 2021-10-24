@@ -15,15 +15,18 @@ namespace MarketPlace.Domain.Services.Services.Implementation
         #region constructor
         private readonly IGenericRepository<SiteSetting> _siteSettingRepository;
         private readonly IGenericRepository<Slider> _sliderRepository;
+        private readonly IGenericRepository<SiteBanner> _bannerRepository;
 
         public SiteService
             (
             IGenericRepository<SiteSetting> siteSettingRepository,
-            IGenericRepository<Slider> sliderRepository
+            IGenericRepository<Slider> sliderRepository,
+            IGenericRepository<SiteBanner> bannerRepository
             )
         {
             _siteSettingRepository = siteSettingRepository;
             _sliderRepository = sliderRepository;
+            _bannerRepository = bannerRepository;
         }
         #endregion
         #region dispose
@@ -31,6 +34,7 @@ namespace MarketPlace.Domain.Services.Services.Implementation
         {
             if (_siteSettingRepository != null) await _siteSettingRepository.DisposeAsync();
             if (_sliderRepository != null) await _sliderRepository.DisposeAsync();
+            if (_bannerRepository != null) await _bannerRepository.DisposeAsync();
         }
 
         #endregion
@@ -46,7 +50,14 @@ namespace MarketPlace.Domain.Services.Services.Implementation
         {
             return await _sliderRepository.GetQuery().AsQueryable().
                 Where(a => a.IsActive && !a.IsDelete).ToListAsync();
+        }
+        #endregion
 
+        #region site banner
+        public async Task<List<SiteBanner>> GetSiteBannerByPlacement(List<BannerPlacement> placements)
+        {
+            return await _bannerRepository.GetQuery().AsQueryable().
+                Where(a=>placements.Contains(a.BannerPlacement)).ToListAsync();
         }
         #endregion
 
