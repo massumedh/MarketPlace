@@ -159,3 +159,5 @@ D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Accou
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\bin\Debug\net5.0\GoogleReCaptcha.V3.dll
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Shared\_CaptchaScripts.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Shared\_CaptchaInput.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Shared\Components\HomeSlider\HomeSlider.cshtml.g.cs

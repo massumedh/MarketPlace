@@ -40,8 +40,22 @@ using MarketPlace.Domain.Services.DTOs.Site;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Services.DTOs.Contacts;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Entites.Site;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"06462dfc0a08ce711899db92e996696ad8e1a564", @"/Views/Shared/_HeaderReferences.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4211dd8e309b9d81146bf514fe3cc6495be251d4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"67adecfb022eb9608d3c0ac6a31508fceb3f3123", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__HeaderReferences : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

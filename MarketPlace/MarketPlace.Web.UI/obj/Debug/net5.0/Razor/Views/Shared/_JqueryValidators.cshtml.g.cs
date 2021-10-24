@@ -40,8 +40,22 @@ using MarketPlace.Domain.Services.DTOs.Site;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Services.DTOs.Contacts;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Entites.Site;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"276c71f7aa6be362f7087e52a3ce1de914b4337b", @"/Views/Shared/_JqueryValidators.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4211dd8e309b9d81146bf514fe3cc6495be251d4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"67adecfb022eb9608d3c0ac6a31508fceb3f3123", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__JqueryValidators : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

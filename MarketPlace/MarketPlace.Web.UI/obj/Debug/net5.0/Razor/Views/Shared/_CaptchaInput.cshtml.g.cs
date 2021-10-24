@@ -40,8 +40,22 @@ using MarketPlace.Domain.Services.DTOs.Site;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Services.DTOs.Contacts;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Entites.Site;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b14c764c4fcf818252bb872ecfa7d7dc05b39340", @"/Views/Shared/_CaptchaInput.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4211dd8e309b9d81146bf514fe3cc6495be251d4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"67adecfb022eb9608d3c0ac6a31508fceb3f3123", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__CaptchaInput : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CaptchaDTO>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "hidden", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -70,7 +84,7 @@ using MarketPlace.Domain.Services.DTOs.Site;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b14c764c4fcf818252bb872ecfa7d7dc05b393404112", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b14c764c4fcf818252bb872ecfa7d7dc05b393404506", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

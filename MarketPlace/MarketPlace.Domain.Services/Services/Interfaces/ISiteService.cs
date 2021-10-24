@@ -10,7 +10,11 @@ namespace MarketPlace.Domain.Services.Services.Interfaces
    public interface ISiteService : IAsyncDisposable
     {
         #region site setting
-        Task<SiteSetting> GetDefaultSiteSetting(); 
+        Task<SiteSetting> GetDefaultSiteSetting();
+        #endregion
+
+        #region slider
+        Task<List<Slider>> GetAllActiveSlider();
         #endregion
     }
 }

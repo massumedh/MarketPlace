@@ -1,4 +1,5 @@
 ﻿using MarketPlace.Domain.Entites.Common;
+using MarketPlace.Domain.Entites.Contacts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -57,6 +58,9 @@ namespace MarketPlace.Domain.Entites.Account
 
         [Display(Name = "بلاک شده / نشده")]
         public bool IsBlocked { get; set; }
+        #endregion
+        #region relation
+        public ICollection<ContactUs> ContactUs  { get; set; }
         #endregion
     }
 }
