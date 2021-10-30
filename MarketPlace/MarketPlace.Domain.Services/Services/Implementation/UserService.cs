@@ -80,5 +80,22 @@ namespace MarketPlace.Domain.Services.Services.Implementation
             await _userRepository.SaveChanges();
             return ForgotPasswordResult.Success;
         }
+
+        public async Task<bool> ChangeUserPassword(ChangePasswordDTO changePassword,long currentUserId)
+        {
+            var user = await _userRepository.GetEntityById(currentUserId);
+            if (user != null)
+            {
+                var newpassword = _passwordHelper.EncodePasswordMd5(changePassword.NewPassword);
+                if (newpassword != user.Password)
+                {
+                    user.Password = newpassword;
+                    _userRepository.EditEntity(user);
+                    await _userRepository.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

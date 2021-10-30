@@ -162,3 +162,9 @@ D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Share
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Shared\Components\HomeSlider\HomeSlider.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Home\AboutUs.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\_ViewImports.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\_ViewStart.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Shared\_UserLayout.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Home\Dashboard.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Account\ChangePassword.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Shared\Components\UserSidebar\UserSidebar.cshtml.g.cs
