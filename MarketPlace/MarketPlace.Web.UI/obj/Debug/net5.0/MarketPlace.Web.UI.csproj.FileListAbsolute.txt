@@ -169,3 +169,5 @@ D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Account\ChangePassword.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Shared\Components\UserSidebar\UserSidebar.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Account\EditProfile.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\bin\Debug\net5.0\LazZiya.ImageResize.dll
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\bin\Debug\net5.0\SixLabors.ImageSharp.dll

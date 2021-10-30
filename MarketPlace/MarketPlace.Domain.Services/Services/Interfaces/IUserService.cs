@@ -1,6 +1,7 @@
 ﻿using MarketPlace.Domain.Entites.Account;
 using MarketPlace.Domain.Services.DTOs;
 using MarketPlace.Domain.Services.DTOs.Account;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Threading.Tasks;
 
@@ -15,6 +16,6 @@ namespace MarketPlace.Domain.Services.Services.Interfaces
         Task<ForgotPasswordResult> RecoverUserPassword(ForgotPasswordDTO forgot);
         Task<bool> ChangeUserPassword(ChangePasswordDTO changePassword,long currentUserId);
         Task<EditUserProfileDTO> GetProfileForEdit(long userId);
-        Task<EditProfileUserResult> EditUserProfile(EditUserProfileDTO profile,long userId);
+        Task<EditProfileUserResult> EditUserProfile(EditUserProfileDTO profile,long userId,IFormFile avatarImage);
     }
 }

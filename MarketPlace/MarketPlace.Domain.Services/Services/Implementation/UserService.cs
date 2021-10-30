@@ -1,11 +1,15 @@
 ﻿using MarketPlace.Domain.Entites.Account;
 using MarketPlace.Domain.Services.DTOs;
 using MarketPlace.Domain.Services.DTOs.Account;
+using MarketPlace.Domain.Services.Extensions;
 using MarketPlace.Domain.Services.Repository.Interfaces;
 using MarketPlace.Domain.Services.Services.Interfaces;
+using MarketPlace.Domain.Services.Utils;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,13 +29,15 @@ namespace MarketPlace.Domain.Services.Services.Implementation
             _passwordHelper = passwordHelper;
         }
         #endregion
+
         #region dispose
         public async ValueTask DisposeAsync()
         {
             await _userRepository.DisposeAsync();
-        } 
+        }
         #endregion
 
+        #region account
         public async Task<bool> IsUserExistsByMobile(string mobile)
         {
             return await _userRepository.GetQuery().AsQueryable().AnyAsync(a => a.Mobile == mobile);
@@ -46,9 +52,9 @@ namespace MarketPlace.Domain.Services.Services.Implementation
                     FirstName = register.FirstName,
                     LastName = register.LastName,
                     Mobile = register.Mobile,
-                    Password=_passwordHelper.EncodePasswordMd5(register.Password),
-                    MobileActiveCode=new Random().Next(10000,999999).ToString(),
-                    EmailActiveCode=Guid.NewGuid().ToString("N")
+                    Password = _passwordHelper.EncodePasswordMd5(register.Password),
+                    MobileActiveCode = new Random().Next(10000, 999999).ToString(),
+                    EmailActiveCode = Guid.NewGuid().ToString("N")
                 };
                 await _userRepository.AddEntity(user);
                 await _userRepository.SaveChanges();
@@ -83,7 +89,7 @@ namespace MarketPlace.Domain.Services.Services.Implementation
             return ForgotPasswordResult.Success;
         }
 
-        public async Task<bool> ChangeUserPassword(ChangePasswordDTO changePassword,long currentUserId)
+        public async Task<bool> ChangeUserPassword(ChangePasswordDTO changePassword, long currentUserId)
         {
             var user = await _userRepository.GetEntityById(currentUserId);
             if (user != null)
@@ -108,11 +114,11 @@ namespace MarketPlace.Domain.Services.Services.Implementation
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Avatar=user.Avatar
+                Avatar = user.Avatar
             };
         }
 
-        public async Task<EditProfileUserResult> EditUserProfile(EditUserProfileDTO profile,long userId)
+        public async Task<EditProfileUserResult> EditUserProfile(EditUserProfileDTO profile, long userId, IFormFile avatarImage)
         {
             var user = await _userRepository.GetEntityById(userId);
             if (user == null) return EditProfileUserResult.NotFound;
@@ -120,10 +126,17 @@ namespace MarketPlace.Domain.Services.Services.Implementation
             if (!user.IsMobileActive) return EditProfileUserResult.IsNotActive;
             user.FirstName = profile.FirstName;
             user.LastName = profile.LastName;
+            if (avatarImage != null && avatarImage.IsImage())
+            {
+                var imageName = Guid.NewGuid().ToString("N") + Path.GetExtension(avatarImage.FileName);
+                avatarImage.AddImageToServer(imageName, PathExtension.UserAvatarOriginServer, 100, 100, PathExtension.UserAvatarThumbServer, user.Avatar);
+                user.Avatar = imageName;
+            }
             _userRepository.EditEntity(user);
             await _userRepository.SaveChanges();
             return EditProfileUserResult.Success;
 
-        }
+        } 
+        #endregion
     }
 }

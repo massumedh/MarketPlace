@@ -63,7 +63,7 @@ namespace MarketPlace.Web.UI.Areas.User.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _userService.EditUserProfile(profile, User.GetUserId());
+                var result = await _userService.EditUserProfile(profile, User.GetUserId(),avatarImage);
                 switch (result)
                 {
                     case EditProfileUserResult.NotFound:
@@ -77,7 +77,8 @@ namespace MarketPlace.Web.UI.Areas.User.Controllers
                         break;
                     case EditProfileUserResult.Success:
                         TempData[SuccessMessage] = $"جناب {profile.FirstName} {profile.LastName}، پروفایل شما با موفقیت ویرایش شد";
-                        break;
+                        return RedirectToAction("EditProfile");
+                        
                   
                 }
             }
