@@ -23,12 +23,14 @@ namespace MarketPlace.Domain.Services.Services.Implementation
         {
             _userRepository = userRepository;
             _passwordHelper = passwordHelper;
-        } 
+        }
         #endregion
+        #region dispose
         public async ValueTask DisposeAsync()
         {
             await _userRepository.DisposeAsync();
-        }
+        } 
+        #endregion
 
         public async Task<bool> IsUserExistsByMobile(string mobile)
         {
@@ -96,6 +98,32 @@ namespace MarketPlace.Domain.Services.Services.Implementation
                 }
             }
             return false;
+        }
+
+        public async Task<EditUserProfileDTO> GetProfileForEdit(long userId)
+        {
+            var user = await _userRepository.GetEntityById(userId);
+            if (user == null) return null;
+            return new EditUserProfileDTO
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Avatar=user.Avatar
+            };
+        }
+
+        public async Task<EditProfileUserResult> EditUserProfile(EditUserProfileDTO profile,long userId)
+        {
+            var user = await _userRepository.GetEntityById(userId);
+            if (user == null) return EditProfileUserResult.NotFound;
+            if (user.IsBlocked) return EditProfileUserResult.IsBlocked;
+            if (!user.IsMobileActive) return EditProfileUserResult.IsNotActive;
+            user.FirstName = profile.FirstName;
+            user.LastName = profile.LastName;
+            _userRepository.EditEntity(user);
+            await _userRepository.SaveChanges();
+            return EditProfileUserResult.Success;
+
         }
     }
 }

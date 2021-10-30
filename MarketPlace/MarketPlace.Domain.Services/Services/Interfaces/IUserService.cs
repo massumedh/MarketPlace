@@ -14,5 +14,7 @@ namespace MarketPlace.Domain.Services.Services.Interfaces
         Task<User> GetUserByMobile(string mobile);
         Task<ForgotPasswordResult> RecoverUserPassword(ForgotPasswordDTO forgot);
         Task<bool> ChangeUserPassword(ChangePasswordDTO changePassword,long currentUserId);
+        Task<EditUserProfileDTO> GetProfileForEdit(long userId);
+        Task<EditProfileUserResult> EditUserProfile(EditUserProfileDTO profile,long userId);
     }
 }

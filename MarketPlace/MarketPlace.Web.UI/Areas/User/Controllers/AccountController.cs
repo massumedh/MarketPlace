@@ -2,6 +2,7 @@
 using MarketPlace.Domain.Services.PresentationExtensions;
 using MarketPlace.Domain.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,41 @@ namespace MarketPlace.Web.UI.Areas.User.Controllers
                 }
             }
             return View(passwordDTO);
+        }
+        #endregion
+
+        #region edit profile
+        [HttpGet("edit-profile")]
+        public async Task<IActionResult> EditProfile()
+        {
+            var userProfile = await _userService.GetProfileForEdit(User.GetUserId());
+            if (userProfile == null) return NotFound();
+            return View(userProfile);
+        }
+        [HttpPost("edit-profile")]
+        public async Task<IActionResult> EditProfile(EditUserProfileDTO profile,IFormFile avatarImage)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _userService.EditUserProfile(profile, User.GetUserId());
+                switch (result)
+                {
+                    case EditProfileUserResult.NotFound:
+                        TempData[ErrorMessage] = "کاربری با مشصخات وارد شده یافت نشد";
+                        break;
+                    case EditProfileUserResult.IsBlocked:
+                        TempData[ErrorMessage] = "حساب کاربری شما بلاک شده است";
+                        break;
+                    case EditProfileUserResult.IsNotActive:
+                        TempData[ErrorMessage] = "حساب کاربری شما فعال نشده است";
+                        break;
+                    case EditProfileUserResult.Success:
+                        TempData[SuccessMessage] = $"جناب {profile.FirstName} {profile.LastName}، پروفایل شما با موفقیت ویرایش شد";
+                        break;
+                  
+                }
+            }
+            return View(profile);
         }
         #endregion
     }
