@@ -17,6 +17,8 @@ namespace MarketPlace.DAL.EF.Context
         public DbSet<ContactUs> ContactUs { get; set; }
         public DbSet<Slider> Sliders{ get; set; }
         public DbSet<SiteBanner> SiteBanners  { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<TicketMessage> TicketMessages { get; set; }
         #endregion
         #region on model creating
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -17,3 +17,4 @@ D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPl
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\ref\MarketPlace.Domain.Services.dll
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.pdb
 D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.genruntimeconfig.cache
+D:\MarketPlace\MarketPlace\MarketPlace.Domain.Services\obj\Debug\net5.0\MarketPlace.Domain.Services.csproj.CopyComplete

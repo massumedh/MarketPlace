@@ -6,6 +6,12 @@ namespace MarketPlace.Domain.Services.Services.Interfaces
 {
     public interface IContactService : IAsyncDisposable
     {
-        Task CreateContactUs(CreateContactUsDTO contact,string userIp,long? userId);
+        #region contact us
+        Task CreateContactUs(CreateContactUsDTO contact, string userIp, long? userId);
+        #endregion
+
+        #region ticket
+        Task<AddTicketResult> AddUserTicket(AddTicketDTO ticket,long userId);
+        #endregion
     }
 }
