@@ -49,13 +49,20 @@ using MarketPlace.Domain.Services.DTOs.Contacts;
 #nullable disable
 #nullable restore
 #line 6 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Areas\User\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Services.DTOs.Seller;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Areas\User\Views\_ViewImports.cshtml"
 using MarketPlace.Domain.Entites.Site;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7c77adef66e6c3861205a65b1599c1e9dcf4a8fb", @"/Areas/User/Views/Shared/_UserLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"67adecfb022eb9608d3c0ac6a31508fceb3f3123", @"/Areas/User/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f837a6baf299b0d5f3ae17af5f3160d5a786cd89", @"/Areas/User/Views/_ViewImports.cshtml")]
     public class Areas_User_Views_Shared__UserLayout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

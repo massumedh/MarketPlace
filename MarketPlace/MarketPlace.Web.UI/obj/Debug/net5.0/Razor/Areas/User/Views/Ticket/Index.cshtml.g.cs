@@ -49,13 +49,20 @@ using MarketPlace.Domain.Services.DTOs.Contacts;
 #nullable disable
 #nullable restore
 #line 6 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Areas\User\Views\_ViewImports.cshtml"
+using MarketPlace.Domain.Services.DTOs.Seller;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\Areas\User\Views\_ViewImports.cshtml"
 using MarketPlace.Domain.Entites.Site;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0f59f53ec9561beb5adc09c1c65dc133c985f67b", @"/Areas/User/Views/Ticket/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"67adecfb022eb9608d3c0ac6a31508fceb3f3123", @"/Areas/User/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f837a6baf299b0d5f3ae17af5f3160d5a786cd89", @"/Areas/User/Views/_ViewImports.cshtml")]
     public class Areas_User_Views_Ticket_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<FilterTicketDTO>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "User", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -193,7 +200,7 @@ using MarketPlace.Domain.Entites.Site;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                                    <td><span class=\"danger\"></span></td>\r\n                                                    <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f59f53ec9561beb5adc09c1c65dc133c985f67b9758", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f59f53ec9561beb5adc09c1c65dc133c985f67b9969", async() => {
                 WriteLiteral("نمایش جزییات");
             }
             );
@@ -247,7 +254,7 @@ using MarketPlace.Domain.Entites.Site;
 #line hidden
 #nullable disable
             WriteLiteral("                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0f59f53ec9561beb5adc09c1c65dc133c985f67b13268", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0f59f53ec9561beb5adc09c1c65dc133c985f67b13479", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

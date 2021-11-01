@@ -1,6 +1,7 @@
 ﻿using MarketPlace.Domain.Entites.Account;
 using MarketPlace.Domain.Entites.Contacts;
 using MarketPlace.Domain.Entites.Site;
+using MarketPlace.Domain.Entites.Store;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -19,6 +20,7 @@ namespace MarketPlace.DAL.EF.Context
         public DbSet<SiteBanner> SiteBanners  { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TicketMessage> TicketMessages { get; set; }
+        public DbSet<Seller> Sellers { get; set; }
         #endregion
         #region on model creating
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,5 +1,6 @@
 ﻿using MarketPlace.Domain.Entites.Common;
 using MarketPlace.Domain.Entites.Contacts;
+using MarketPlace.Domain.Entites.Store;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -61,6 +62,7 @@ namespace MarketPlace.Domain.Entites.Account
         public ICollection<ContactUs> ContactUs  { get; set; }
         public ICollection<Ticket> Tickets { get; set; }
         public ICollection<TicketMessage> TicketMessages { get; set; }
+        public ICollection<Seller> Sellers { get; set; }
         #endregion
     }
 }

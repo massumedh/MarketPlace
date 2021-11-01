@@ -40,6 +40,7 @@ namespace MarketPlace.Web.UI
             services.AddScoped<IUserService,UserService>();
             services.AddScoped<ISiteService, SiteService>();
             services.AddScoped<IContactService,ContactService>();
+            services.AddScoped<ISellerService, SellerService>();
             services.AddScoped<IPasswordHelper,PasswordHelper>();
             services.AddHttpClient<ICaptchaValidator,GoogleReCaptchaValidator>();
             #endregion

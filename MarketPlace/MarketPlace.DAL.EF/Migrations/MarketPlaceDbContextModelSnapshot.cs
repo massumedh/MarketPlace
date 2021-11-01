@@ -354,6 +354,63 @@ namespace MarketPlace.DAL.EF.Migrations
                     b.ToTable("Sliders");
                 });
 
+            modelBuilder.Entity("MarketPlace.Domain.Entites.Store.Seller", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("AdminDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Mobile")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("StoreAcceptanceDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StoreAcceptanceState")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StoreName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Sellers");
+                });
+
             modelBuilder.Entity("MarketPlace.Domain.Entites.Contacts.ContactUs", b =>
                 {
                     b.HasOne("MarketPlace.Domain.Entites.Account.User", "User")
@@ -394,9 +451,22 @@ namespace MarketPlace.DAL.EF.Migrations
                     b.Navigation("Ticket");
                 });
 
+            modelBuilder.Entity("MarketPlace.Domain.Entites.Store.Seller", b =>
+                {
+                    b.HasOne("MarketPlace.Domain.Entites.Account.User", "User")
+                        .WithMany("Sellers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MarketPlace.Domain.Entites.Account.User", b =>
                 {
                     b.Navigation("ContactUs");
+
+                    b.Navigation("Sellers");
 
                     b.Navigation("TicketMessages");
 

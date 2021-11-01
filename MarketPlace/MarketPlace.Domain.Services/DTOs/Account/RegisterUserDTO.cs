@@ -1,11 +1,5 @@
 ﻿using MarketPlace.Domain.Services.DTOs.Site;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace MarketPlace.Domain.Services.DTOs
 {
     public class RegisterUserDTO : CaptchaDTO
