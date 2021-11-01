@@ -20,9 +20,23 @@ namespace MarketPlace.Web.UI.Areas.User.Controllers
         #endregion
 
         #region list
-        public IActionResult Index()
+        [HttpGet("tickets")]
+        public async Task<IActionResult> Index(FilterTicketDTO filter)
         {
-            return View();
+            filter.UserId = User.GetUserId();
+            filter.FilterTicketState = FilterTicketState.NotDeleted;
+            filter.OrderBy = FilterTicketOrder.CreateDate_DES;
+            return View(await _contactService.FilterTickets(filter));
+        }
+        #endregion
+
+        #region  show ticket detail
+        [HttpGet("tickets/{ticketId}")]
+        public async Task<IActionResult> TicketDetail(long ticketId)
+        {
+            var ticket = await _contactService.GetTicketForShow(ticketId, User.GetUserId());
+            if (ticket == null) return NotFound();
+            return View(ticket);
         }
         #endregion
 

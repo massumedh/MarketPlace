@@ -172,3 +172,7 @@ D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\bin\Debug\net5.0\LazZiya.ImageResize.dll
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\bin\Debug\net5.0\SixLabors.ImageSharp.dll
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Ticket\AddTicket.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Shared\_NoItemFound.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Ticket\Index.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Ticket\TicketDetail.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Shared\_AnswerTicketPartial.cshtml.g.cs

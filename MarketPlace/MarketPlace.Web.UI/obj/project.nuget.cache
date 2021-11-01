@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fx89aGjxecYMpxu+eLKqQL//cHGVHDtoqG4Z0NUlgmVfTn01+LC4uAMf4bf9fhxnJWm8Vr93kAwfPZUZkppabA==",
+  "dgSpecHash": "QHfRJw/D4gziRk+OloNQV9E0r4O23STpRCATvrH4n/3y1uon611XICKfgXZI4wF1U99qGXM1/rhKi4Uz6OrGBg==",
   "success": true,
   "projectFilePath": "D:\\MarketPlace\\MarketPlace\\MarketPlace.Web.UI\\MarketPlace.Web.UI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\ckeditor\\3.6.4\\ckeditor.3.6.4.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\googlerecaptcha.v3\\1.3.1\\googlerecaptcha.v3.1.3.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\lazziya.imageresize\\4.1.0\\lazziya.imageresize.4.1.0.nupkg.sha512",

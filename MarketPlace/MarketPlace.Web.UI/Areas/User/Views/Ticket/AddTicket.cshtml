@@ -4,12 +4,11 @@
     ViewData["Title"] = "ثبت تیکت جدید";
 }
 
-
-
-
 @section scripts
 {
     <partial name="_JqueryValidators" />
+
+    <script src="~/js/ckeditor.js"></script>
 }
 
 <div class="breadcrumbs_area">
@@ -56,7 +55,7 @@
                                             <span class="text-danger" asp-validation-for="TicketPriority"></span>
                                             <br />
                                             <label>متن پیام</label>
-                                            <textarea class="form-control" asp-for="Text" rows="10"></textarea>
+                                            <textarea class="form-control" asp-for="Text" rows="10" ckeditor="1"></textarea>
                                             <span class="text-danger" asp-validation-for="Text"></span>
                                             <br />
                                             <div class="save_button primary_btn default_button">
