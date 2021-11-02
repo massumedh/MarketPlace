@@ -138,7 +138,20 @@ namespace MarketPlace.Domain.Services.Services.Implementation
             return EditRequestSellerResult.Success;
         }
 
-      
+        public async Task<bool> AcceptSellerRequest(long requestId)
+        {
+            var sellerRequest = await _sellerRepository.GetEntityById(requestId);
+            if (sellerRequest != null)
+            {
+                sellerRequest.StoreAcceptanceState = StoreAcceptanceState.Accepted;
+                _sellerRepository.EditEntity(sellerRequest);
+                await _sellerRepository.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+
         #endregion
 
 

@@ -1,7 +1,5 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="no-js" lang="fa" dir="rtl">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <partial name="_HeaderReferences" />
-    @RenderSection("styles",false)
+    @RenderSection("styles", false)
 </head>
 
 <body>
@@ -17,7 +15,7 @@
     @RenderBody()
     @await Component.InvokeAsync("SiteFooter")
     <partial name="_FooterReferences" />
-    @RenderSection("scripts",false)
+    @RenderSection("scripts", false)
     <partial name="_SiteMessages" />
 </body>
 

@@ -10,6 +10,7 @@ namespace MarketPlace.Domain.Services.Services.Interfaces
         Task<FilterSellerDTO> FilterSellers(FilterSellerDTO filter);
         Task<EditRequestSellerDTO> GetRequestSellerForEdit(long Id,long currentUserId);
         Task<EditRequestSellerResult> EditRequestSeller(EditRequestSellerDTO request,long currentUserId);
+        Task<bool> AcceptSellerRequest(long requestId);
         #endregion
     }
 }
