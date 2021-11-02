@@ -176,5 +176,6 @@ D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Views\Share
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Ticket\Index.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Ticket\TicketDetail.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Shared\_AnswerTicketPartial.cshtml.g.cs
-D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Seller\RequsetSellerPanel.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Seller\RequestSellerPanel.cshtml.g.cs
 D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Seller\SellerRequests.cshtml.g.cs
+D:\MarketPlace\MarketPlace\MarketPlace.Web.UI\obj\Debug\net5.0\Razor\Areas\User\Views\Seller\EditRequestSeller.cshtml.g.cs

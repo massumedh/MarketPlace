@@ -5,7 +5,6 @@ using MarketPlace.Domain.Services.DTOs.Seller;
 using MarketPlace.Domain.Services.Repository.Interfaces;
 using MarketPlace.Domain.Services.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 namespace MarketPlace.Domain.Services.Services.Implementation
@@ -31,75 +30,117 @@ namespace MarketPlace.Domain.Services.Services.Implementation
         #endregion
 
         #region seller
+
         public async Task<RequestSellerResult> AddNewSellerRequset(RequestSellerDTO seller, long userId)
         {
             var user = await _userRepository.GetEntityById(userId);
+
             if (user.IsBlocked) return RequestSellerResult.HasNotPermission;
 
-            var hasUnderProgressRequset = await _sellerRepository.GetQuery().AsQueryable().
-                AnyAsync(a => a.UserId == userId && a.StoreAcceptanceState == StoreAcceptanceState.UnderProgress);
-            if (hasUnderProgressRequset) return RequestSellerResult.HasUnderProgressRequest;
+            var hasUnderProgressRequest = await _sellerRepository.GetQuery().AsQueryable().AnyAsync(s =>
+                s.UserId == userId && s.StoreAcceptanceState == StoreAcceptanceState.UnderProgress);
+
+            if (hasUnderProgressRequest) return RequestSellerResult.HasUnderProgressRequest;
 
             var newSeller = new Seller
             {
                 UserId = userId,
                 StoreName = seller.StoreName,
-                Phone = seller.Phone,
                 Address = seller.Address,
-                StoreAcceptanceState = StoreAcceptanceState.UnderProgress,
+                Phone = seller.Phone,
+                StoreAcceptanceState = StoreAcceptanceState.UnderProgress
             };
+
             await _sellerRepository.AddEntity(newSeller);
             await _sellerRepository.SaveChanges();
+
             return RequestSellerResult.Success;
         }
-
         public async Task<FilterSellerDTO> FilterSellers(FilterSellerDTO filter)
         {
-            var query = _sellerRepository.GetQuery().Include(a => a.User).AsQueryable();
+            var query = _sellerRepository.GetQuery()
+                .Include(s => s.User)
+                .AsQueryable();
+
             #region state
+
             switch (filter.State)
             {
                 case FilterSellerState.All:
-                    query = query.Where(a => !a.IsDelete);
-                    break;
-                case FilterSellerState.UnderProgress:
-                    query = query.Where(a => a.StoreAcceptanceState == StoreAcceptanceState.UnderProgress && !a.IsDelete);
+                    query = query.Where(s => !s.IsDelete);
                     break;
                 case FilterSellerState.Accepted:
-                    query = query.Where(a => a.StoreAcceptanceState == StoreAcceptanceState.Accepted && !a.IsDelete);
+                    query = query.Where(s => s.StoreAcceptanceState == StoreAcceptanceState.Accepted && !s.IsDelete);
+                    break;
+
+                case FilterSellerState.UnderProgress:
+                    query = query.Where(s => s.StoreAcceptanceState == StoreAcceptanceState.UnderProgress && !s.IsDelete);
                     break;
                 case FilterSellerState.Rejected:
-                    query = query.Where(a => a.StoreAcceptanceState == StoreAcceptanceState.Rejected && !a.IsDelete);
-                    break;              
+                    query = query.Where(s => s.StoreAcceptanceState == StoreAcceptanceState.Rejected && !s.IsDelete);
+                    break;
             }
+
             #endregion
 
             #region filter
+
             if (filter.userId != null && filter.userId != 0)
-                query = query.Where(a => a.ID == filter.userId);
+                query = query.Where(s => s.UserId == filter.userId);
 
             if (!string.IsNullOrEmpty(filter.StoreName))
-                query = query.Where(a => EF.Functions.Like(a.StoreName, $"%{filter.StoreName}%"));
+                query = query.Where(s => EF.Functions.Like(s.StoreName, $"%{filter.StoreName}%"));
 
             if (!string.IsNullOrEmpty(filter.Phone))
-                query = query.Where(a => EF.Functions.Like(a.Phone, $"%{filter.Phone}%"));
-
-            if (!string.IsNullOrEmpty(filter.Mobile))
-                query = query.Where(a => EF.Functions.Like(a.Mobile,$"%{filter.Mobile}%"));
+                query = query.Where(s => EF.Functions.Like(s.Phone, $"%{filter.Phone}%"));   
 
             if (!string.IsNullOrEmpty(filter.Address))
-                query = query.Where(a => EF.Functions.Like(a.Address, $"%{filter.Address}%"));
+                query = query.Where(s => EF.Functions.Like(s.Address, $"%{filter.Address}%"));
+
             #endregion
 
             #region paging
-            var ticketCount = await query.CountAsync();
-            var pager = Pager.Build(filter.CurrentPage, ticketCount, filter.ItemPerPage, filter.HowManyShowPageAfterAndBefore);
-            var allEntites = await query.Paging(pager).ToListAsync();
+
+            var pager = Pager.Build(filter.CurrentPage, await query.CountAsync(), filter.ItemPerPage, filter.HowManyShowPageAfterAndBefore);
+            var allEntities = await query.Paging(pager).ToListAsync();
+
             #endregion
 
-            return filter.SetPaging(pager).SetSellers(allEntites);
+            return filter.SetPaging(pager).SetSellers(allEntities);
         }
+
+        public async Task<EditRequestSellerDTO> GetRequestSellerForEdit(long id, long currentUserId)
+        {
+            var seller = await _sellerRepository.GetEntityById(id);
+            if (seller == null || seller.UserId != currentUserId) return null;
+
+            return new EditRequestSellerDTO
+            {
+                Id = seller.ID,
+                Phone = seller.Phone,
+                Address = seller.Address,
+                StoreName = seller.StoreName
+            };
+        }
+
+        public async Task<EditRequestSellerResult> EditRequestSeller(EditRequestSellerDTO request, long currentUserId)
+        {
+            var seller = await _sellerRepository.GetEntityById(request.Id);
+            if (seller == null || seller.UserId != currentUserId) return EditRequestSellerResult.NotFound;
+
+            seller.Phone = request.Phone;
+            seller.Address = request.Address;
+            seller.StoreName = request.StoreName;
+            seller.StoreAcceptanceState = StoreAcceptanceState.UnderProgress;
+            _sellerRepository.EditEntity(seller);
+            await _sellerRepository.SaveChanges();
+
+            return EditRequestSellerResult.Success;
+        }
+
+      
         #endregion
+
 
     }
 }

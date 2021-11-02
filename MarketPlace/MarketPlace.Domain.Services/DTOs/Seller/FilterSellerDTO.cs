@@ -9,7 +9,7 @@ namespace MarketPlace.Domain.Services.DTOs.Seller
         public long? userId { get; set; }
         public string StoreName { get; set; }
         public string Phone { get; set; }
-        public string Mobile { get; set; }
+       
         public string Address { get; set; }
         public FilterSellerState State { get; set; }
         public List<MarketPlace.Domain.Entites.Store.Seller> Sellers { get; set; }

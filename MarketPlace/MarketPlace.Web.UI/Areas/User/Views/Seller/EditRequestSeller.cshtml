@@ -1,8 +1,7 @@
-﻿@model RequestSellerDTO
+﻿@model EditRequestSellerDTO
 @{
-    ViewData["Title"] = "درخواست پنل فروشندگی";
+    ViewData["Title"] = "ویرایش درخواست";
 }
-
 
 @section scripts
 {
@@ -39,7 +38,9 @@
                             <div class="login">
                                 <div class="login_form_container">
                                     <div class="account_login_form">
-                                        <form asp-area="User" asp-controller="Seller" asp-action="RequsetSellerPanel">
+                                        <form asp-area="User" asp-controller="Seller" asp-action="EditRequestSeller">
+                                            <input asp-for="Id" type="hidden" />
+
                                             <label>نام فروشگاه</label>
                                             <input type="text" asp-for="StoreName">
                                             <span class="text-danger" asp-validation-for="StoreName"></span>
@@ -53,7 +54,7 @@
                                             <span class="text-danger" asp-validation-for="Address"></span>
 
                                             <div class="save_button primary_btn default_button">
-                                                <button type="submit">ثبت اطلاعات</button>
+                                                <button type="submit">ویرایش اطلاعات</button>
                                             </div>
                                         </form>
                                     </div>
